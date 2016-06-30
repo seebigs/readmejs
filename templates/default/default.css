@@ -1,0 +1,76 @@
+html, body {
+    margin: 0;
+    font-family: monospace;
+    background: #19242F;
+    color: #ddd;
+}
+
+body {
+    padding-bottom: 100px;
+}
+
+.readmejs-navbar {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    padding: 5px 0 20px 0;
+    background: #555A5F;
+    text-align: right;
+    font-size: 22px;
+}
+
+.readmejs-navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.readmejs-navbar li {
+    margin: 5px 0;
+    padding: 6px 30px;
+    cursor: pointer;
+}
+
+.readmejs-navbar li:hover {
+    text-decoration: underline;
+}
+
+.readmejs-nav-module-api {
+    display: none;
+}
+
+#app-info {
+    height: 40px;
+    padding: 20px 4%;
+    background: #333;
+    margin-bottom: 20px;
+}
+
+#app-info-name {
+    display: inline;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+#app-info-version {
+    display: inline;
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+#app-modules {
+    padding: 0 4%;
+}
+
+.module-name {
+    font-size: 28px;
+    margin: 60px 0 10px 0;
+}
+
+.module-path {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #999;
+    font-style: italic;
+    color: #777;
+}

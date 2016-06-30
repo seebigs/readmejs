@@ -16,7 +16,7 @@ var GLOBAL = 'globalval';
 /**
  * This is the best
  * It's really something
- * @module one
+ * @module Placement: Intercard
  */
 
 module.exports = (function () {
