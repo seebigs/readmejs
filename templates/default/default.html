@@ -4,10 +4,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{title}}</title>
     <link href="index.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="index.js"></script>
 </head>
 <body>
-    <div class="readmejs-navbar">{{navbar}}</div>
-    <div class="readmejs-main">{{appHTML}}</div>
+    <div class="readmejs-nav">{{navbar}}</div>
+    <div class="readmejs-main">
+        <div class="readmejs-info">
+            <div class="readmejs-info-name">{{appName}}</div>
+            <div class="readmejs-info-version">{{appVersion}}</div>
+        </div>
+        <div class="readmejs-modules">{{modules}}</div>
+    </div>
 </body>
 </html>

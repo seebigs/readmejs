@@ -9,56 +9,71 @@ body {
     padding-bottom: 100px;
 }
 
-.readmejs-navbar {
+.readmejs-nav {
     position: fixed;
-    top: 80px;
+    top: 0;
     right: 0;
-    padding: 5px 0 20px 0;
+    padding: 5px 10px 15px 0;
     background: #555A5F;
-    text-align: right;
-    font-size: 22px;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.readmejs-navbar ul {
+.readmejs-nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.readmejs-navbar li {
-    margin: 5px 0;
-    padding: 6px 30px;
+.readmejs-nav li {
+    padding-left: 12px;
+}
+
+.readmejs-nav-clickable {
+    padding: 6px 0;
     cursor: pointer;
 }
 
-.readmejs-navbar li:hover {
+.readmejs-nav-clickable:hover {
     text-decoration: underline;
 }
 
-.readmejs-nav-module-api {
+.readmejs-nav-dir-name {
+    color: #afd1f3;
+}
+
+.readmejs-nav-dir-contents {
     display: none;
 }
 
-#app-info {
+.readmejs-nav-file-name {
+
+}
+
+.readmejs-info {
     height: 40px;
     padding: 20px 4%;
     background: #333;
     margin-bottom: 20px;
+    white-space: nowrap;
 }
 
-#app-info-name {
+.readmejs-info-name {
     display: inline;
     font-size: 32px;
     letter-spacing: 1px;
 }
 
-#app-info-version {
+.readmejs-info-version {
     display: inline;
     margin-left: 5px;
     font-size: 20px;
 }
 
-#app-modules {
+.readmejs-modules {
     padding: 0 4%;
 }
 
@@ -73,4 +88,10 @@ body {
     border-bottom: 1px solid #999;
     font-style: italic;
     color: #777;
+}
+
+@media (max-width: 650px) {
+    .readmejs-nav {
+        display: none;
+    }
 }
