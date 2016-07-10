@@ -48,5 +48,5 @@ module.exports = {
     pub1: pub1,
     pub2: galz,
     SECRET: SECRET,
-    color: 'red'
+    flag: true
 };

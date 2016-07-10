@@ -63,7 +63,7 @@ module.exports = (function () {
         pub2: galz,
         GLOBAL: GLOBAL,
         SECRET: SECRET,
-        color: 'red'
+        number: 54
     };
 
 })();

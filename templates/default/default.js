@@ -10,4 +10,14 @@ $(function () {
         window.location = '#' + moduleNum;
     });
 
+    $('.readmejs-nav-hide').on('click', function () {
+        $('.readmejs-nav').hide();
+        $('.readmejs-nav-hidden').show();
+    });
+
+    $('.readmejs-nav-hidden').on('click', function () {
+        $('.readmejs-nav-hidden').hide();
+        $('.readmejs-nav').show();
+    });
+
 });

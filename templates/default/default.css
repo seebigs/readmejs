@@ -9,17 +9,22 @@ body {
     padding-bottom: 100px;
 }
 
+
+/* NAV */
+
 .readmejs-nav {
     position: fixed;
     top: 0;
     right: 0;
-    padding: 5px 10px 15px 0;
+    padding: 5px 15px 10px 5px;
     background: #555A5F;
+    border-bottom-left-radius: 2px;
     font-size: 16px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    z-index: 9;
 }
 
 .readmejs-nav ul {
@@ -53,6 +58,38 @@ body {
 
 }
 
+.readmejs-nav-hidden {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 3px 6px;
+    background: #555A5F;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 9;
+}
+
+.readmejs-nav-hide {
+    position: absolute;
+    left: -20px;
+    top: 0;
+    padding: 3px 6px;
+    background: #555A5F;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+
+/* INFO */
+
 .readmejs-info {
     height: 40px;
     padding: 20px 4%;
@@ -73,22 +110,114 @@ body {
     font-size: 20px;
 }
 
+
+/* MODULES */
+
 .readmejs-modules {
     padding: 0 4%;
 }
 
-.module-name {
+.readmejs-module-name {
     font-size: 28px;
-    margin: 60px 0 10px 0;
+    margin: 60px 0 5px 0;
 }
 
-.module-path {
+.readmejs-module-path {
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid #999;
     font-style: italic;
-    color: #777;
+    color: #92b2d0;
 }
+
+.readmejs-module-comments {
+    margin: 20px;
+    color: #777;
+    font-style: italic;
+}
+
+
+/* API */
+
+.readmejs-api {
+    position: relative;
+    margin: 10px 10px 15px 10px;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.readmejs-api-method {
+    border: 1px solid #686f75;
+    background: #31404e;
+}
+
+.readmejs-api-property {
+    border: 1px solid #708885;
+    background: #344c4a;
+}
+
+.readmejs-api-literal {
+    border: 1px solid #777;
+    background: #424242;
+}
+
+.readmejs-api-type {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 10px;
+    font-style: italic;
+}
+
+.readmejs-api-name {
+    font-size: 20px;
+}
+
+.readmejs-api-comments {
+    margin: 10px;
+    color: #999;
+    font-style: italic;
+}
+
+.readmejs-api-value {
+    margin: 10px;
+}
+
+
+/* PARAMS */
+
+.readmejs-api-params:before {
+    content: 'Params';
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.readmejs-api-params {
+    display: table;
+    border-collapse: collapse;
+}
+
+.readmejs-param {
+    display: table-row;
+}
+
+.readmejs-param-name, .readmejs-param-type, .readmejs-param-description {
+    display: table-cell;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.readmejs-param-type:before {
+    content: '{';
+}
+
+.readmejs-param-type:after {
+    content: '}';
+}
+
+
+/* RESPONSIVE */
 
 @media (max-width: 650px) {
     .readmejs-nav {
