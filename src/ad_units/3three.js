@@ -45,7 +45,7 @@ var Module3 = (function () {
     /**
      * Description galz
      * @param {Object} `sarah` Beth
-     * @param {String} `mary` Jane
+     * @param `mary` Jane
      * @return {String} common interests
      */
     function galz (sarah, mary) {

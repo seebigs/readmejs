@@ -12,7 +12,7 @@ module.exports = (function () {
 
     }
 
-    var pub1 = function (willy) {
+    var pub1 = function () {
 
     };
 

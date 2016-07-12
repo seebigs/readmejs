@@ -37,9 +37,7 @@ module.exports = (function () {
 
     /**
      * Description pub1
-     *
      * Example: pub1("Gene Wilder")
-     *
      * @param {Object} `willy` wonka
      * @return {String} `vanilla` factory
      * @return {String} `chocolate` factory

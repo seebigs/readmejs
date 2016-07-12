@@ -119,7 +119,7 @@ body {
 
 .readmejs-module-name {
     font-size: 28px;
-    margin: 60px 0 5px 0;
+    margin: 70px 0 5px 0;
 }
 
 .readmejs-module-path {
@@ -167,6 +167,7 @@ body {
     top: 10px;
     font-size: 10px;
     font-style: italic;
+    color: #999;
 }
 
 .readmejs-api-name {
@@ -179,6 +180,10 @@ body {
     font-style: italic;
 }
 
+.readmejs-api-comments div {
+    min-height: 8px;
+}
+
 .readmejs-api-value {
     margin: 10px;
 }
@@ -186,34 +191,57 @@ body {
 
 /* PARAMS */
 
-.readmejs-api-params:before {
+.readmejs-api-params:not(:empty)::before {
     content: 'Params';
     display: block;
-    margin-bottom: 10px;
+    margin: 0 0 10px -10px;
     font-size: 16px;
 }
 
 .readmejs-api-params {
     display: table;
     border-collapse: collapse;
+    margin: 20px 0 20px 20px;
+}
+
+.readmejs-params-headers {
+    display: table-row;
+    font-style: italic;
+    color: #d0c19e;
 }
 
 .readmejs-param {
     display: table-row;
 }
 
+.readmejs-param-header-name, .readmejs-param-header-type, .readmejs-param-header-description,
 .readmejs-param-name, .readmejs-param-type, .readmejs-param-description {
     display: table-cell;
     padding: 10px;
     border: 1px solid #ccc;
 }
 
-.readmejs-param-type:before {
-    content: '{';
+.readmejs-param-description {
+    font-size: 0.875em;
 }
 
-.readmejs-param-type:after {
-    content: '}';
+.readmejs-param-type {
+    font-size: 0.875em;
+    font-style: italic;
+}
+
+.readmejs-api-returns:not(:empty)::before {
+    content: 'Returns';
+    display: block;
+    margin: 0 0 10px -10px;
+    font-size: 16px;
+    color: #ddd;
+}
+
+.readmejs-api-returns {
+    margin: 20px 0 5px 20px;
+    font-style: italic;
+    color: #999;
 }
 
 
