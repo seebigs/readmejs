@@ -3,20 +3,13 @@ var view = require('./lib/view.js');
 var parse = require('./lib/parse.js');
 var utils = require('./lib/utils.js');
 
-function debug (obj) {
-    console.log();
-    console.log(JSON.stringify(obj, null, 4));
-    console.log();
-    console.log();
-}
-
 function readmejs (options) {
     var opt = {
         src: 'src',
         dest: 'docs',
         app: {
-            name: 'My Beautiful App',
-            version: '- v5.11.0'
+            name: 'API',
+            version: ''
         }
     };
 
@@ -30,11 +23,13 @@ function readmejs (options) {
 
     view.create(api, opt.dest);
 
-    // debug(api);
+    // utils.debug(api);
 
     return api;
 }
 
 module.exports = readmejs;
 
-readmejs();
+readmejs({
+    // src: '../tags/src/javascripts/self_service'
+});

@@ -13,18 +13,18 @@ module.exports = (function () {
     var pub = {};
 
     /**
-     * Actually, it's not secret
-     */
-    pub.SECRET = 'secretval';
-
-    /**
      * Description private1
      * @param `foo` bar
      * @return null
      */
     function private1 (a, b, c) {
-
+        pub.SECRET = 'newval';
     }
+
+    /**
+     * Actually, it's not secret
+     */
+    pub.SECRET = 'secretval';
 
     /**
      * Description pub1
@@ -36,10 +36,16 @@ module.exports = (function () {
      * @return {String} `chocolate` factory
      */
     pub.pub1 = function (willy) {
+        pub.pub1 = function (override) {
 
+        };
     };
 
     pub.pub2 = private1;
+
+    pub.pub1 = function (later) {
+
+    };
 
     return pub;
 
