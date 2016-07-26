@@ -171,6 +171,10 @@ body {
 }
 
 .readmejs-api-name {
+    display: none;
+}
+
+.readmejs-api-signature {
     font-size: 20px;
 }
 
