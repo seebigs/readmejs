@@ -13,7 +13,7 @@ var SECRET = 'secretval';
  * @return null
  */
 function private1 () {
-
+    SECRET = 'newval';
 }
 
 /**
