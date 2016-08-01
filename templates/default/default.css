@@ -146,6 +146,11 @@ body {
     border-radius: 2px;
 }
 
+.readmejs-api-function {
+    border: 1px solid #756873;
+    background: #4e3147;
+}
+
 .readmejs-api-method {
     border: 1px solid #686f75;
     background: #31404e;
