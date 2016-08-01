@@ -118,6 +118,10 @@ body {
 }
 
 .readmejs-module-name {
+    display: none;
+}
+
+.readmejs-module-signature {
     font-size: 28px;
     margin: 70px 0 5px 0;
 }
@@ -128,6 +132,10 @@ body {
     border-bottom: 1px solid #999;
     font-style: italic;
     color: #92b2d0;
+}
+
+.readmejs-module-type {
+    display: none;
 }
 
 .readmejs-module-comments {
@@ -146,22 +154,22 @@ body {
     border-radius: 2px;
 }
 
-.readmejs-api-function {
+.readmejs-api-typeof-function {
     border: 1px solid #756873;
     background: #4e3147;
 }
 
-.readmejs-api-method {
+.readmejs-api-typeof-method {
     border: 1px solid #686f75;
     background: #31404e;
 }
 
-.readmejs-api-property {
+.readmejs-api-typeof-property {
     border: 1px solid #708885;
     background: #344c4a;
 }
 
-.readmejs-api-literal {
+.readmejs-api-typeof-literal {
     border: 1px solid #777;
     background: #424242;
 }

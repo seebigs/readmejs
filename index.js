@@ -1,6 +1,6 @@
 
 var view = require('./lib/view.js');
-var parse = require('./lib/parse.js');
+var parseApp = require('./lib/parse_app.js');
 var utils = require('./lib/utils.js');
 
 function readmejs (options) {
@@ -22,14 +22,15 @@ function readmejs (options) {
         utils.extend(opt, options);
     }
 
-    var api = parse(opt.src, opt.app, opt);
+    var app = parseApp(opt.src, opt.app, opt);
 
-    view.create(api, opt.dest);
+    view.create(app, opt.dest);
 
-    console.log('\n\n\n\n\n\n\n\n\n###############################################\n');
-    // utils.debug(api);
+    console.log('\n\n\n\n\n#############################################################################################################################################\n');
+    utils.debug(app);
+    console.log('modules.length = ' + app.modules.length);
 
-    return api;
+    return app;
 }
 
 module.exports = readmejs;
@@ -39,7 +40,8 @@ readmejs({
     // src: 'src/commonjs'
 
     // src: '../dollar-js/src/dollar/fake',
-    // exports: {
-    //     global: '$'
-    // }
+    src: 'src/global',
+    exports: {
+        global: '$'
+    }
 });
