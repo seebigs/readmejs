@@ -23,8 +23,14 @@ $ = function (selector, context) {
 };
 
 var models = {
-    f150: true,
-    focus: false
+    f150: false,
+    focus: function focusOnMe () {
+
+    }
+};
+
+var more = {
+    more: 'now'
 };
 
 /**
@@ -35,7 +41,7 @@ $.fn = $.again = $.prototype = {
     ford: models,
     fruit: {
         apples: true,
-        oranges: false
+        oranges: more
     },
     willy: function (wonka) {
 
