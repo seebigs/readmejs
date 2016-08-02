@@ -1,5 +1,16 @@
 
-other.stuff = false;
+var models = {
+    outer: true
+};
+
+other.stuff = (function () {
+
+function pretty () {
+    var models = {
+        claudia: true,
+        yvonne: true
+    };
+}
 
 /**
  * Init Dollar
@@ -8,6 +19,12 @@ other.stuff = false;
  */
 $ = function (selector, context) {
     $.fn.init(selector, context);
+    var models = 'like glue';
+};
+
+var models = {
+    f150: true,
+    focus: false
 };
 
 /**
@@ -15,6 +32,11 @@ $ = function (selector, context) {
  */
 $.fn = $.again = $.prototype = {
     foo: 'bar',
+    ford: models,
+    fruit: {
+        apples: true,
+        oranges: false
+    },
     willy: function (wonka) {
 
     }
@@ -31,3 +53,5 @@ $.fn.foo.bar.baz.add = function (selector, context) {
  * meaning of life
  */
 $.max = 54;
+
+})();

@@ -144,37 +144,48 @@ body {
     font-style: italic;
 }
 
+.readmejs-module-params {
 
-/* API */
+}
 
-.readmejs-api {
+.readmejs-module-returns {
+
+}
+
+.readmejs-module-value {
+    margin: 10px 10px 15px 10px;
+    padding: 10px;
+    border-radius: 2px;
+    border: 1px solid #777;
+    background: #424242;
+}
+
+
+/* PROPERTIES */
+
+.readmejs-property {
     position: relative;
     margin: 10px 10px 15px 10px;
     padding: 10px;
     border-radius: 2px;
 }
 
-.readmejs-api-typeof-function {
+.readmejs-property-typeof-function {
     border: 1px solid #756873;
     background: #4e3147;
 }
 
-.readmejs-api-typeof-method {
+.readmejs-property-typeof-method {
     border: 1px solid #686f75;
     background: #31404e;
 }
 
-.readmejs-api-typeof-property {
+.readmejs-property-typeof-property {
     border: 1px solid #708885;
     background: #344c4a;
 }
 
-.readmejs-api-typeof-literal {
-    border: 1px solid #777;
-    background: #424242;
-}
-
-.readmejs-api-type {
+.readmejs-property-type {
     position: absolute;
     right: 10px;
     top: 10px;
@@ -183,39 +194,39 @@ body {
     color: #999;
 }
 
-.readmejs-api-name {
+.readmejs-property-name {
     display: none;
 }
 
-.readmejs-api-signature {
+.readmejs-property-signature {
     font-size: 20px;
 }
 
-.readmejs-api-comments {
+.readmejs-property-comments {
     margin: 10px;
     color: #999;
     font-style: italic;
 }
 
-.readmejs-api-comments div {
+.readmejs-property-comments div {
     min-height: 8px;
 }
 
-.readmejs-api-value {
+.readmejs-property-value {
     margin: 10px;
 }
 
 
 /* PARAMS */
 
-.readmejs-api-params:not(:empty)::before {
+.readmejs-property-params:not(:empty)::before {
     content: 'Params';
     display: block;
     margin: 0 0 10px -10px;
     font-size: 16px;
 }
 
-.readmejs-api-params {
+.readmejs-property-params {
     display: table;
     border-collapse: collapse;
     margin: 20px 0 20px 20px;
@@ -247,7 +258,7 @@ body {
     font-style: italic;
 }
 
-.readmejs-api-returns:not(:empty)::before {
+.readmejs-property-returns:not(:empty)::before {
     content: 'Returns';
     display: block;
     margin: 0 0 10px -10px;
@@ -255,7 +266,7 @@ body {
     color: #ddd;
 }
 
-.readmejs-api-returns {
+.readmejs-property-returns {
     margin: 20px 0 5px 20px;
     font-style: italic;
     color: #999;

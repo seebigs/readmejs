@@ -26,9 +26,9 @@ function readmejs (options) {
 
     view.create(app, opt.dest);
 
-    console.log('\n\n\n\n\n#############################################################################################################################################\n');
-    utils.debug(app);
-    console.log('modules.length = ' + app.modules.length);
+    // console.log('\n\n\n\n\n#############################################################################################################################################\n');
+    // utils.debug(app);
+    // console.log('modules.length = ' + app.modules.length);
 
     return app;
 }
@@ -39,9 +39,8 @@ readmejs({
     // src: '../tags/src/javascripts/self_service'
     // src: 'src/commonjs'
 
-    // src: '../dollar-js/src/dollar/fake',
-    src: 'src/global',
-    exports: {
-        global: '$'
-    }
+    // src: 'src/global',
+    // exports: {
+    //     global: '$'
+    // }
 });
