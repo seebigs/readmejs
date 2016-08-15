@@ -8,8 +8,7 @@ var junk = require('path/to/junk.js');
 var GLOBAL = 'globalval';
 
 /**
- * This is the best
- * It's really something
+ * 
  * @module three
  */
 

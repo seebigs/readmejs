@@ -8,15 +8,13 @@ var junk = require('path/to/junk.js');
 var GLOBAL = 'globalval';
 
 /**
- * This is the best
- * It's really something
+ * You should never see this!
  * @module WRONG
  */
 
 /**
- * This is the best
- * It's really something
- * @module Placement: Intercard
+ * CallExpression
+ * @module ModuleOne
  */
 
 module.exports = (function () {
@@ -36,7 +34,7 @@ module.exports = (function () {
     }
 
     /**
-     * Description pub1
+     * 
      * Example: pub1("Gene Wilder")
      * @param {Object} `willy` wonka
      * @return {String} `vanilla` factory
@@ -47,7 +45,7 @@ module.exports = (function () {
     };
 
     /**
-     * Description galz
+     * FunctionDeclaration
      * @param {Object} `sarah` Beth
      * @param {String} `mary` Jane
      * @return {String} common interests

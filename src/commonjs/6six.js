@@ -3,8 +3,7 @@
 var junk = require('path/to/junk.js');
 
 /**
- * This is the best
- * It's really something
+ * CallExpression
  * @module six
  */
 

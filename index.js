@@ -1,7 +1,7 @@
 
 var view = require('./lib/view.js');
 var parseApp = require('./lib/parse_app.js');
-var utils = require('./lib/utils.js');
+var utils = require('seebigs-utils');
 
 function readmejs (options) {
     var opt = {
@@ -19,7 +19,7 @@ function readmejs (options) {
     if (typeof options === 'string') {
         opt.src = options;
     } else {
-        utils.extend(opt, options);
+        Object.assign(opt, options);
     }
 
     var app = parseApp(opt.src, opt.app, opt);
@@ -27,7 +27,7 @@ function readmejs (options) {
     view.create(app, opt.dest);
 
     // console.log('\n\n\n\n\n#############################################################################################################################################\n');
-    // utils.debug(app);
+    // utils.debug(app, '-- APP --');
     // console.log('modules.length = ' + app.modules.length);
 
     return app;
@@ -37,7 +37,7 @@ module.exports = readmejs;
 
 readmejs({
     // src: '../tags/src/javascripts/self_service'
-    // src: 'src/commonjs'
+    src: 'src/commonjs'
 
     // src: 'src/global',
     // exports: {

@@ -40,8 +40,7 @@ function galz (sarah, mary) {
 }
 
 /**
- * This is not very good
- * Just throw it away
+ * ObjectExpression
  * @module two
  */
 module.exports = {

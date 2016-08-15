@@ -1,6 +1,7 @@
 
 /**
  * Reference to a function module
+ * @module ModuleSeven
  */
 function moduleFn (a, b) {
 
@@ -19,6 +20,6 @@ moduleFn.go = function go (c, d) {
 moduleFn.time = '123';
 
 /**
- * This is a module that is a reference to a function
+ * This should probably be ignored
  */
 module.exports = moduleFn;
