@@ -4,7 +4,8 @@ var junk = require('path/to/junk.js');
 
 /**
  * CallExpression
- * @module six
+ * M6
+ * @module ModuleSix
  */
 
 module.exports = (function () {

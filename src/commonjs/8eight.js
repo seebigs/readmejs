@@ -1,6 +1,7 @@
 
 /**
- * This is a module that is itself a function
+ * FunctionDeclaration
+ * M8
  * @module ModuleEight
  */
 

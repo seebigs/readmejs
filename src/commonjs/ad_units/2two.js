@@ -41,7 +41,8 @@ function galz (sarah, mary) {
 
 /**
  * ObjectExpression
- * @module two
+ * M2
+ * @module ModuleTwo
  */
 module.exports = {
     pub1: pub1,

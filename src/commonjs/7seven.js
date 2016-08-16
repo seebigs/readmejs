@@ -1,6 +1,7 @@
 
 /**
- * Reference to a function module
+ * Identifier > FunctionDeclaration
+ * M7
  * @module ModuleSeven
  */
 function moduleFn (a, b) {

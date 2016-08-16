@@ -1,5 +1,6 @@
 /**
- * Maybe like a template
+ * Literal
+ * M9
  * @module ModuleNine
  */
 

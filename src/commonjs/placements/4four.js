@@ -40,9 +40,9 @@ function galz (sarah, mary) {
 }
 
 /**
- * This is not very good
- * Just throw it away
- * @module four
+ * Identifier > ObjectExpression
+ * M4
+ * @module ModuleFour
  */
 var Module4 = {
     pub1: pub1,

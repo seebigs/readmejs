@@ -14,6 +14,7 @@ var GLOBAL = 'globalval';
 
 /**
  * CallExpression
+ * M1
  * @module ModuleOne
  */
 
@@ -34,7 +35,7 @@ module.exports = (function () {
     }
 
     /**
-     * 
+     *
      * Example: pub1("Gene Wilder")
      * @param {Object} `willy` wonka
      * @return {String} `vanilla` factory
