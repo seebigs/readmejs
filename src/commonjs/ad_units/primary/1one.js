@@ -26,7 +26,7 @@ module.exports = (function () {
     var SECRET = 'secretval';
 
     /*
-     * Description private1
+     * FunctionDeclaration
      * @param `foo` bar
      * @return null
      */

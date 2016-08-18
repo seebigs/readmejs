@@ -14,7 +14,9 @@ module.exports = (function () {
 
     /**
      * Description private1
-     * @param `foo` bar
+     * @param `a` aar
+     * @param `b` bar
+     * @param `c` car
      * @return null
      */
     function private1 (a, b, c) {

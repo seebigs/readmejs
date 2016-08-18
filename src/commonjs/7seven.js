@@ -2,6 +2,9 @@
 /**
  * Identifier > FunctionDeclaration
  * M7
+ * @param {String} a for the money
+ * @param {String} b for the show
+ * @returns {Number} 8675309
  * @module ModuleSeven
  */
 function moduleFn (a, b) {

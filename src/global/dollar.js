@@ -14,7 +14,7 @@ function pretty () {
 
 /**
  * Init Dollar
- * @param `selector` description
+ * @param {Any} `selector` description
  * @return a wrapped instance
  */
 $ = function (selector, context) {
@@ -24,7 +24,12 @@ $ = function (selector, context) {
 
 var models = {
     f150: false,
-    focus: function focusOnMe () {
+
+    /**
+     * FunctionExpression
+     * @returns {String} best in class
+     */
+    focus: function focusOnMe (drive) {
 
     }
 };
@@ -43,6 +48,11 @@ $.fn = $.again = $.prototype = {
         apples: true,
         oranges: more
     },
+
+    /**
+     * This is willy
+     * @param wonka loves chocolate
+     */
     willy: function (wonka) {
 
     }
@@ -50,6 +60,8 @@ $.fn = $.again = $.prototype = {
 
 /**
  * Hello Global Module
+ * @param {Any} selector will do
+ * @return {dollar} a wrapped instance of dollar
  */
 $.fn.foo.bar.baz.add = function (selector, context) {
     $.fn.foo = crap;

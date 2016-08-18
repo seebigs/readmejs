@@ -280,10 +280,10 @@ body {
     font-size: 0.875em;
     font-style: italic;
 }
-.readmejs-param-type:before {
+.readmejs-param-type:not(:empty)::before {
     content: '{';
 }
-.readmejs-param-type:after {
+.readmejs-param-type:not(:empty)::after {
     content: '}';
 }
 
@@ -297,8 +297,6 @@ body {
 
 .readmejs-property-returns {
     margin: 20px 0 5px 20px;
-    font-style: italic;
-    color: #999;
 }
 
 
@@ -306,16 +304,20 @@ body {
 
 .readmejs-return-type {
     display: inline-block;
+    color: #999;
+    font-style: italic;
 }
-.readmejs-return-type:before {
+.readmejs-return-type:not(:empty)::before {
     content: '{';
 }
-.readmejs-return-type:after {
+.readmejs-return-type:not(:empty)::after {
     content: '}';
 }
 
 .readmejs-return-description {
     display: inline-block;
+    color: #999;
+    font-style: italic;
 }
 
 

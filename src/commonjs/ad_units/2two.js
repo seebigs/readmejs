@@ -48,5 +48,11 @@ module.exports = {
     pub1: pub1,
     pub2: galz,
     SECRET: SECRET,
-    flag: true
+    flag: true,
+    obj: {
+        pub1: pub1,
+        pub2: galz,
+        SECRET: SECRET,
+        flag: true
+    }
 };
