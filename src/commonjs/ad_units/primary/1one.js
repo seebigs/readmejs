@@ -38,8 +38,8 @@ module.exports = (function () {
      *
      * Example: pub1("Gene Wilder")
      * @param {Object} `willy` wonka
-     * @return {String} `vanilla` factory
-     * @return {String} `chocolate` factory
+     * @return {String} vanilla factory
+     * @return {String} chocolate factory
      */
     var pub1 = function (willy) {
 

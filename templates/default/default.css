@@ -159,8 +159,19 @@ body {
     background: #424242;
 }
 
-.readmejs-module-returns {
+.readmejs-module-returns:not(:empty)::before {
+    content: 'Returns';
+    display: block;
+    margin: 0 0 10px -10px;
+    font-size: 16px;
+}
 
+.readmejs-module-returns {
+    border-collapse: collapse;
+    margin: 10px 10px 15px 10px;
+    padding: 10px 10px 20px 20px;
+    border: 1px solid #777;
+    background: #424242;
 }
 
 .readmejs-module-value {
@@ -269,6 +280,12 @@ body {
     font-size: 0.875em;
     font-style: italic;
 }
+.readmejs-param-type:before {
+    content: '{';
+}
+.readmejs-param-type:after {
+    content: '}';
+}
 
 .readmejs-property-returns:not(:empty)::before {
     content: 'Returns';
@@ -282,6 +299,23 @@ body {
     margin: 20px 0 5px 20px;
     font-style: italic;
     color: #999;
+}
+
+
+/* RETURNS */
+
+.readmejs-return-type {
+    display: inline-block;
+}
+.readmejs-return-type:before {
+    content: '{';
+}
+.readmejs-return-type:after {
+    content: '}';
+}
+
+.readmejs-return-description {
+    display: inline-block;
 }
 
 
