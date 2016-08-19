@@ -44,6 +44,7 @@ var Module3 = (function () {
 
     /**
      * Description galz
+     * And more galz
      * @param {Object} `sarah` Beth
      * @param `mary` Jane
      * @return {String} common interests

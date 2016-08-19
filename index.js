@@ -1,5 +1,5 @@
 
-var view = require('./lib/view.js');
+var view = require('./lib/view_markdown.js');
 var parseApp = require('./lib/parse_app.js');
 
 function readmejs (options) {
@@ -11,7 +11,7 @@ function readmejs (options) {
         },
         app: {
             name: 'API',
-            version: ''
+            version: '0.0.0'
         }
     };
 
