@@ -63,4 +63,12 @@ var Module3 = (function () {
 
 })();
 
+/**
+ * Extra extra extra...
+ * @param long fellow deeds
+ */
+Module3.extra = function extra (long) {
+
+}
+
 module.exports = Module3;

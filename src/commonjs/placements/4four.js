@@ -51,4 +51,12 @@ var Module4 = {
     color: 'red'
 };
 
+/**
+ * Extra extra extra...
+ * @param long fellow deeds
+ */
+Module4.extra = function extra (long) {
+    
+};
+
 module.exports = Module4;

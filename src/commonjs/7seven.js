@@ -13,6 +13,8 @@ function moduleFn (a, b) {
 
 /**
  * and this is a crazy extension
+ * @param c {Animal} cat
+ * @param d {Animal} dog
  */
 moduleFn.go = function go (c, d) {
 

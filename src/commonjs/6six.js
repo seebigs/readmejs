@@ -1,54 +1,31 @@
 
-
-var junk = require('path/to/junk.js');
-
 /**
- * CallExpression
+ * Identifier > FunctionExpression
  * M6
+ * @param {String} a for the money
+ * @param {String} b for the show
+ * @returns {Number} 8675309
  * @module ModuleSix
  */
+var moduleFn = function (a, b) {
 
-module.exports = (function () {
+};
 
-    var pub = {};
+/**
+ * and this is a crazy extension
+ * @param c {Animal} cat
+ * @param d {Animal} dog
+ */
+moduleFn.go = function go (c, d) {
 
-    /**
-     * Description private1
-     * @param `a` aar
-     * @param `b` bar
-     * @param `c` car
-     * @return null
-     */
-    function private1 (a, b, c) {
-        pub.SECRET = 'newval';
-    }
+};
 
-    /**
-     * Actually, it's not secret
-     */
-    pub.SECRET = 'secretval';
+/**
+ * how long
+ */
+moduleFn.time = '123';
 
-    /**
-     * Description pub1
-     *
-     * Example: pub1("Gene Wilder")
-     *
-     * @param {Object} `willy` wonka
-     * @return {String} `vanilla` factory
-     * @return {String} `chocolate` factory
-     */
-    pub.pub1 = function (willy) {
-        pub.pub1 = function (override) {
-
-        };
-    };
-
-    pub.pub2 = private1;
-
-    pub.pub1 = function (later) {
-
-    };
-
-    return pub;
-
-})();
+/**
+ * This should probably be ignored
+ */
+module.exports = moduleFn;

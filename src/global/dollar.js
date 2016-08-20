@@ -58,6 +58,10 @@ $.fn = $.again = $.prototype = {
     }
 };
 
+$.extra = function extra (long) {
+
+};
+
 /**
  * Hello Global Module
  * @param {Any} selector will do
