@@ -2,6 +2,7 @@
 /**
  * Identifier > FunctionExpression
  * M6
+ * @extends OtherModule but does not modify
  * @param {String} a for the money
  * @param {String} b for the show
  * @returns {Number} 8675309

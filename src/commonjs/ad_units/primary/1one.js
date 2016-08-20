@@ -16,6 +16,7 @@ var GLOBAL = 'globalval';
  * CallExpression
  * M1
  * @module ModuleOne
+ * @api public
  */
 
 module.exports = (function () {

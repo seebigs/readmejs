@@ -40,6 +40,7 @@ var more = {
 
 /**
  * for instances
+ * @extends $ with wrapped matched elements
  */
 $.fn = $.again = $.prototype = {
     foo: 'bar',
@@ -51,6 +52,7 @@ $.fn = $.again = $.prototype = {
 
     /**
      * This is willy
+     * @extends ChocolateFactory
      * @param wonka loves chocolate
      */
     willy: function (wonka) {
