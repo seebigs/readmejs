@@ -1,27 +1,71 @@
 
-var view = require('./lib/view_html.js');
-var parseApp = require('./lib/parse_app.js');
+var parse = require('./lib/parse.js');
+var views = {
+    html: require('./lib/view_lib_html.js'),
+    markdown: require('./lib/view_lib_markdown.js')
+};
+
+/*
+fullOptions = {
+    lib: 'path/to',
+    main: 'path/to/filename.ext',
+    dest: 'path/to',
+    exports: {
+        global: '$'
+    },
+    app: {
+        name: 'NAME',
+        version: '1.2.3'
+    },
+    view: 'html' || { create: fn() }
+}
+*/
 
 function readmejs (options) {
     var opt = {
-        src: 'src',
         dest: 'docs',
-        exports: {
-
-        },
-        app: {
-            name: 'API',
-            version: '0.0.0'
-        }
+        exports: {},
+        app: {}
     };
 
     if (typeof options === 'string') {
-        opt.src = options;
+        opt.lib = options;
     } else {
         Object.assign(opt, options);
     }
 
-    var app = parseApp(opt.src, opt.app, opt);
+
+    /* Build App Object */
+
+    var app = {};
+
+    if (!opt.lib && !opt.main) {
+        // search for entry file
+        // package.json
+        // index.js
+        // opt.main = foundIt
+    }
+
+    if (opt.lib) {
+        app = parse.lib(opt);
+    }
+
+    if (opt.main) {
+        app = parse.entry(opt);
+    }
+
+
+    /* Create View */
+
+    var view = views.markdown;
+
+    if (opt.view) {
+        if (typeof opt.view === 'string') {
+            view = views[opt.view];
+        } else {
+            view = opt.view;
+        }
+    }
 
     view.create(app, opt.dest);
 
@@ -31,11 +75,13 @@ function readmejs (options) {
 module.exports = readmejs;
 
 readmejs({
-    // src: '../tags/src/javascripts/self_service'
-    src: 'src/commonjs'
+
+    lib: 'my_app/src/commonjs',
 
     // src: 'src/global',
     // exports: {
     //     global: '$'
     // }
+
+    // view: 'html'
 });
