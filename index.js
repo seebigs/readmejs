@@ -37,7 +37,7 @@ function readmejs (options) {
 
     /* Build App Object */
 
-    var app = {};
+    var app;
 
     if (!opt.lib && !opt.main) {
         // search for entry file
@@ -54,6 +54,11 @@ function readmejs (options) {
         app = parse.entry(opt);
     }
 
+    if (!app) {
+        console.log('ERROR: Options must contain .lib or .main or both');
+        return;
+    }
+
 
     /* Create View */
 
@@ -67,7 +72,7 @@ function readmejs (options) {
         }
     }
 
-    view.create(app, opt.dest);
+    view.create(app, opt);
 
     return app;
 }
@@ -77,11 +82,12 @@ module.exports = readmejs;
 readmejs({
 
     lib: 'my_app/src/commonjs',
+    // lib: 'my_app/src/comments',
 
-    // src: 'src/global',
+    // lib: 'my_app/src/global',
     // exports: {
     //     global: '$'
-    // }
+    // },
 
-    // view: 'html'
+    view: 'html'
 });

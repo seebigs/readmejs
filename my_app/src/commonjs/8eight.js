@@ -1,6 +1,6 @@
 
 /**
- * FunctionDeclaration
+ * FunctionExpression
  * M8
  * @param {String} one for the road
  * @param {String} two to tango
