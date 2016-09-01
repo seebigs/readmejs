@@ -25,7 +25,8 @@ function readmejs (options) {
     var opt = {
         dest: 'docs',
         exports: {},
-        app: {}
+        app: {},
+        paths: []
     };
 
     if (typeof options === 'string') {
@@ -81,7 +82,7 @@ module.exports = readmejs;
 
 readmejs({
 
-    lib: 'my_app/src/commonjs',
+    // lib: 'my_app/src/commonjs',
     // lib: 'my_app/src/comments',
 
     // lib: 'my_app/src/global',
@@ -89,5 +90,11 @@ readmejs({
     //     global: '$'
     // },
 
+    main: 'my_app/src/entry',
+    paths: [
+        'my_app/src/entry'
+    ],
+
     view: 'html'
+
 });

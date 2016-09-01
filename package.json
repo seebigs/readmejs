@@ -16,6 +16,7 @@
     "url": "https://github.com/seebigs/readmejs/issues"
   },
   "dependencies": {
+    "app-module-path": "^1.1.0",
     "ast-parents": "^0.0.1",
     "ast-traverse": "^0.1.1",
     "del": "^2.2.1",
