@@ -26,7 +26,7 @@ module.exports = (function () {
         GLOBAL: GLOBAL,
         SECRET: SECRET,
         color: 'red',
-        lazy: function (punks) { alert(punks); }
+        lazy: function (punks) { return punks * 2; }
     };
 
 })();
