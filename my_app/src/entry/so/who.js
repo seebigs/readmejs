@@ -1,7 +1,7 @@
 
 /**
  * Alone time for me
- * @param {I} myself
+ * @param {I} myself nobody else
  */
 function me (myself) {
 

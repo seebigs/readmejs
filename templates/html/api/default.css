@@ -1,0 +1,273 @@
+html, body {
+    margin: 0;
+    font-family: monospace;
+    background: #eee;
+    color: #222;
+}
+
+body {
+    padding-bottom: 100px;
+}
+
+
+/* INFO */
+
+.readmejs-info {
+    height: 40px;
+    padding: 20px 4%;
+    background: #ccc;
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+
+.readmejs-info-name {
+    display: inline;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.readmejs-info-version {
+    display: inline;
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+
+/* MODULES */
+
+.readmejs-api {
+    padding: 0 4%;
+}
+
+.readmejs-module-name {
+    display: none;
+}
+
+.readmejs-module-signature {
+    display: none;
+}
+
+.readmejs-module-path {
+    display: none;
+}
+
+.readmejs-module-type {
+    display: none;
+}
+
+.readmejs-module-comments {
+    margin: 20px;
+    color: #777;
+    font-style: italic;
+}
+
+.readmejs-module-params:not(:empty)::before {
+    content: 'Params';
+    display: block;
+    margin: 0 0 10px -10px;
+    font-size: 16px;
+}
+
+.readmejs-module-params {
+    border-collapse: collapse;
+    margin: 10px 10px 15px 10px;
+    padding: 10px 10px 20px 20px;
+    border: 1px solid #777;
+    background: #424242;
+}
+
+.readmejs-module-returns:not(:empty)::before {
+    content: 'Returns';
+    display: block;
+    margin: 0 0 10px -10px;
+    font-size: 16px;
+}
+
+.readmejs-module-returns {
+    border-collapse: collapse;
+    margin: 10px 10px 15px 10px;
+    padding: 10px 10px 20px 20px;
+    border: 1px solid #777;
+    background: #424242;
+}
+
+.readmejs-module-value {
+    margin: 10px 10px 15px 10px;
+    padding: 10px;
+    border-radius: 2px;
+    border: 1px solid #777;
+    background: #424242;
+}
+
+
+/* PROPERTIES */
+
+.readmejs-property {
+    position: relative;
+    margin: 10px 10px 30px 10px;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.readmejs-property-typeof-method {
+    border: 1px solid #ccc;
+    background: #d9e1e8;
+}
+
+.readmejs-property-typeof-property {
+    border: 1px solid #ccc;
+    background: #dbe6e5;
+}
+
+.readmejs-property-type {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 10px;
+    font-style: italic;
+    color: #999;
+}
+
+.readmejs-property-name {
+    display: none;
+}
+
+.readmejs-property-signature {
+    font-size: 20px;
+}
+
+.readmejs-property-path {
+    display: none;
+}
+
+.readmejs-property-comments {
+    margin: 10px;
+    color: #888;
+    font-style: italic;
+}
+
+.readmejs-property-comments div {
+    min-height: 8px;
+}
+
+.readmejs-property-value {
+    margin: 10px;
+    white-space: pre;
+}
+
+
+/* LABELS */
+
+.readmejs-label {
+    margin: 20px 0 20px 10px;
+}
+
+.readmejs-label-type {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #ddd;
+    text-transform: capitalize;
+}
+
+.readmejs-label-properties {
+    margin-left: 10px;
+}
+
+.readmejs-label-properties div {
+    display: inline-block;
+    color: #999;
+    font-style: italic;
+}
+
+.readmejs-label-properties div:first-child {
+    font-style: normal;
+}
+
+
+/* PARAMS */
+
+.readmejs-property-params:not(:empty)::before {
+    content: 'Params';
+    display: block;
+    margin: 0 0 10px -10px;
+    font-size: 16px;
+}
+
+.readmejs-property-params {
+    display: table;
+    border-collapse: collapse;
+    margin: 20px 0 20px 20px;
+}
+
+.readmejs-params-headers {
+    display: table-row;
+    font-style: italic;
+    color: #a5bfaa;
+}
+
+.readmejs-param {
+    display: table-row;
+}
+
+.readmejs-param-header-name, .readmejs-param-header-type, .readmejs-param-header-description,
+.readmejs-param-name, .readmejs-param-type, .readmejs-param-description {
+    display: table-cell;
+    padding: 10px;
+    border: 1px solid #bbb;
+}
+
+.readmejs-param-description {
+    font-size: 0.875em;
+}
+
+.readmejs-param-type {
+    font-size: 0.875em;
+    font-style: italic;
+}
+.readmejs-param-type:not(:empty)::before {
+    content: '{';
+}
+.readmejs-param-type:not(:empty)::after {
+    content: '}';
+}
+
+.readmejs-property-returns:not(:empty)::before {
+    content: 'Returns';
+    display: block;
+    margin: 0 0 10px -10px;
+    font-size: 16px;
+}
+
+.readmejs-property-returns {
+    margin: 20px 0 5px 20px;
+}
+
+
+/* RETURNS */
+
+.readmejs-return-type {
+    display: inline-block;
+    color: #999;
+    font-style: italic;
+}
+.readmejs-return-type:not(:empty)::before {
+    content: '{';
+}
+.readmejs-return-type:not(:empty)::after {
+    content: '}';
+}
+
+.readmejs-return-description {
+    display: inline-block;
+    color: #999;
+    font-style: italic;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+    .readmejs-nav {
+        display: none;
+    }
+}

@@ -47,15 +47,15 @@ function readmejs (options) {
         // opt.main = foundIt
     }
 
-    if (opt.lib) {
-        app = parse.lib(opt);
-    }
-
     if (opt.main) {
-        app = parse.entry(opt);
+        var apiApp = parse.entry(opt);
     }
 
-    if (!app) {
+    if (opt.lib) {
+        var libApp = parse.lib(opt);
+    }
+
+    if (!libApp && !apiApp) {
         console.log('ERROR: Options must contain .lib or .main or both');
         return;
     }
@@ -73,16 +73,25 @@ function readmejs (options) {
         }
     }
 
-    view.create(app, opt);
+    if (apiApp) {
+        view.createApi(apiApp, opt);
+    }
 
-    return app;
+    if (libApp) {
+        view.createLib(libApp, opt);
+    }
+
+    return {
+        api: apiApp,
+        lib: libApp
+    };
 }
 
 module.exports = readmejs;
 
 readmejs({
 
-    // lib: 'my_app/src/commonjs',
+    lib: 'my_app/src/commonjs',
     // lib: 'my_app/src/comments',
 
     // lib: 'my_app/src/global',
