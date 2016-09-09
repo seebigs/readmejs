@@ -5,32 +5,16 @@ var views = {
     markdown: require('./lib/view_lib_markdown.js')
 };
 
-/*
-fullOptions = {
-    lib: 'path/to',
-    main: 'path/to/filename.ext',
-    dest: 'path/to',
-    exports: {
-        global: '$'
-    },
-    app: {
-        name: 'NAME',
-        version: '1.2.3'
-    },
-    view: 'html' || { create: fn() }
-}
-*/
 
-function readmejs (options) {
+function entry (options) {
     var opt = {
-        dest: 'docs',
-        exports: {},
         app: {},
+        dest: 'docs',
         paths: []
     };
 
     if (typeof options === 'string') {
-        opt.lib = options;
+        opt.src = options;
     } else {
         Object.assign(opt, options);
     }
@@ -40,25 +24,14 @@ function readmejs (options) {
 
     var app;
 
-    if (!opt.lib && !opt.main) {
+    if (!opt.src) {
         // search for entry file
         // package.json
         // index.js
         // opt.main = foundIt
     }
 
-    if (opt.main) {
-        var apiApp = parse.entry(opt);
-    }
-
-    if (opt.lib) {
-        var libApp = parse.lib(opt);
-    }
-
-    if (!libApp && !apiApp) {
-        console.log('ERROR: Options must contain .lib or .main or both');
-        return;
-    }
+    var apiApp = parse.entry(opt);
 
 
     /* Create View */
@@ -77,32 +50,90 @@ function readmejs (options) {
         view.createApi(apiApp, opt);
     }
 
+    return apiApp;
+}
+
+function lib (options) {
+    var opt = {
+        app: {},
+        dest: 'docs',
+        exports: {}
+    };
+
+    if (typeof options === 'string') {
+        opt.src = options;
+    } else {
+        Object.assign(opt, options);
+    }
+
+
+    /* Build App Object */
+
+    var app;
+
+    if (opt.src) {
+        var libApp = parse.lib(opt);
+    }
+
+
+    /* Create View */
+
+    var view = views.markdown;
+
+    if (opt.view) {
+        if (typeof opt.view === 'string') {
+            view = views[opt.view];
+        } else {
+            view = opt.view;
+        }
+    }
+
     if (libApp) {
         view.createLib(libApp, opt);
     }
 
-    return {
-        api: apiApp,
-        lib: libApp
-    };
+    return libApp;
 }
 
-module.exports = readmejs;
 
-readmejs({
+module.exports = {
+    entry: entry,
+    lib: lib
+};
 
-    lib: 'my_app/src/commonjs',
-    // lib: 'my_app/src/comments',
 
-    // lib: 'my_app/src/global',
-    // exports: {
-    //     global: '$'
-    // },
 
-    main: 'my_app/src/entry',
+
+entry({
+
+    app: {
+        name: 'Demo',
+        version: '1.2.3'
+    },
+
+    src: 'my_app/src/entry',
     paths: [
         'my_app/src/entry'
     ],
+
+    view: 'html'
+
+});
+
+lib({
+
+    app: {
+        name: 'Demo Source',
+        version: '1.2.3'
+    },
+
+    // src: 'my_app/src/commonjs',
+    // src: 'my_app/src/comments',
+
+    src: 'my_app/src/global',
+    exports: {
+        global: '$'
+    },
 
     view: 'html'
 
