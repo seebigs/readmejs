@@ -1,4 +1,7 @@
 
+var path = require('path');
+var utils = require('seebigs-utils');
+
 var parse = require('./lib/parse.js');
 var views = {
     html: require('./lib/view_lib_html.js'),
@@ -9,6 +12,7 @@ var views = {
 function entry (options) {
     var opt = {
         app: {},
+        src: '',
         dest: 'docs',
         paths: []
     };
@@ -19,17 +23,20 @@ function entry (options) {
         Object.assign(opt, options);
     }
 
+    if (!opt.src) {
+        // search package.json
+        var packageJson = utils.readFile(path.resolve('package.json'), function () {});
+        if (packageJson) {
+            var packageJsonParsed = JSON.parse(packageJson);
+            var packageMain = packageJsonParsed.main;
+            if (packageMain) {
+                opt.src = packageMain;
+            }
+        }
+    }
+
 
     /* Build App Object */
-
-    var app;
-
-    if (!opt.src) {
-        // search for entry file
-        // package.json
-        // index.js
-        // opt.main = foundIt
-    }
 
     var apiApp = parse.entry(opt);
 
@@ -53,9 +60,11 @@ function entry (options) {
     return apiApp;
 }
 
+
 function lib (options) {
     var opt = {
         app: {},
+        src: 'src',
         dest: 'docs',
         exports: {}
     };
@@ -69,11 +78,7 @@ function lib (options) {
 
     /* Build App Object */
 
-    var app;
-
-    if (opt.src) {
-        var libApp = parse.lib(opt);
-    }
+    var libApp = parse.lib(opt);
 
 
     /* Create View */
@@ -127,13 +132,13 @@ lib({
         version: '1.2.3'
     },
 
-    // src: 'my_app/src/commonjs',
+    src: 'my_app/src/commonjs',
     // src: 'my_app/src/comments',
 
-    src: 'my_app/src/global',
-    exports: {
-        global: '$'
-    },
+    // src: 'my_app/src/global',
+    // exports: {
+    //     global: '$'
+    // },
 
     view: 'html'
 

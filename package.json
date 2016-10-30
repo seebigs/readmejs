@@ -24,7 +24,8 @@
     "glob": "^7.0.3",
     "mkdirp": "^0.5.1",
     "parse-comments": "^0.4.3",
-    "seebigs-utils": "^1.0.0"
+    "seebigs-resolve": "^1.0.0",
+    "seebigs-utils": "^1.1.0"
   },
   "devDependencies": {
     "eslint": "^3.3.1"
