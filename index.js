@@ -2,7 +2,7 @@ var each = require('seebigs-each');
 var files = require('./lib/files');
 var findExportNode = require('./lib/findExportNode');
 var parseNode = require('./lib/parse/node');
-var ParseTree = require('../parsetree-js'); // FIXME
+var ParseTree = require('parsetree-js');
 var settings = require('./lib/settings');
 var utils = require('seebigs-utils');
 
