@@ -1,145 +1,74 @@
-
-var path = require('path');
+var each = require('seebigs-each');
+var files = require('./lib/files');
+var findExportNode = require('./lib/findExportNode');
+var parseNode = require('./lib/parse/node');
+var ParseTree = require('../parsetree-js'); // FIXME
+var settings = require('./lib/settings');
 var utils = require('seebigs-utils');
 
-var parse = require('./lib/parse.js');
-var views = {
-    html: require('./lib/view_lib_html.js'),
-    markdown: require('./lib/view_lib_markdown.js')
-};
+/**
+ * Generates documentation files based on source code
+ * @param {String|Object} options path to project as String or full options Object
+ */
+function generate(options) {
+    var config = settings.get(options);
+    var modulePaths = files.getModulePaths(config);
 
-
-function entry (options) {
-    var opt = {
-        app: {},
-        src: '',
-        dest: 'docs',
-        paths: []
+    var app = {
+        name: config.app.name,
+        version: config.app.version,
+        description: config.app.description,
+        modules: [],
     };
 
-    if (typeof options === 'string') {
-        opt.src = options;
-    } else {
-        Object.assign(opt, options);
-    }
+    each(modulePaths, function (modPath) {
+        var contents = utils.readFile(modPath);
+        if (contents) {
+            var $ = new ParseTree(contents);
+            if ($) {
+                var exportNodeValue = findExportNode($, config);
+                var parsedModule = parseNode(exportNodeValue);
 
-    if (!opt.src) {
-        // search package.json
-        var packageJson = utils.readFile(path.resolve('package.json'), function () {});
-        if (packageJson) {
-            var packageJsonParsed = JSON.parse(packageJson);
-            var packageMain = packageJsonParsed.main;
-            if (packageMain) {
-                opt.src = packageMain;
+                console.log();
+                console.log(JSON.stringify(parsedModule, null, 4));
+
+                // var parsed = parseModule($, config);
+                // if (parsed) {
+                //     app.modules.push(parsed);
+                // }
             }
         }
-    }
+    });
 
+    // console.log();
+    // console.log(app);
 
-    /* Build App Object */
-
-    var apiApp = parse.entry(opt);
-
-
-    /* Create View */
-
-    var view = views.markdown;
-
-    if (opt.view) {
-        if (typeof opt.view === 'string') {
-            view = views[opt.view];
-        } else {
-            view = opt.view;
-        }
-    }
-
-    if (apiApp) {
-        view.createApi(apiApp, opt);
-    }
-
-    return apiApp;
+    // var app = parseApp();
+    // var view = getView();
+    // view.create();
 }
-
-
-function lib (options) {
-    var opt = {
-        app: {},
-        src: 'src',
-        dest: 'docs',
-        exports: {}
-    };
-
-    if (typeof options === 'string') {
-        opt.src = options;
-    } else {
-        Object.assign(opt, options);
-    }
-
-
-    /* Build App Object */
-
-    var libApp = parse.lib(opt);
-
-
-    /* Create View */
-
-    var view = views.markdown;
-
-    if (opt.view) {
-        if (typeof opt.view === 'string') {
-            view = views[opt.view];
-        } else {
-            view = opt.view;
-        }
-    }
-
-    if (libApp) {
-        view.createLib(libApp, opt);
-    }
-
-    return libApp;
-}
-
 
 module.exports = {
-    entry: entry,
-    lib: lib
+    generate,
 };
 
+// generate();
+// generate('../easybars');
 
-
-
-entry({
-
-    app: {
-        name: 'Demo',
-        version: '1.2.3'
-    },
-
-    src: 'my_app/src/entry',
-    paths: [
-        'my_app/src/entry'
-    ],
-
-    view: 'html'
-
+generate({
+    // packagePath: '../easybars',
+    // modules: 'test/specs',
+    // modules: ['my_app/**/*.js', 'lib']
+    modules: './parseMe.js',
+    exports: {
+        value: '$.fn.thing.too',
+    }
 });
 
-lib({
+// generate({
+//     src: '../im-toolkit',
+// });
 
-    app: {
-        name: 'Demo Source',
-        version: '1.2.3'
-    },
-
-    src: 'my_app/src/commonjs',
-    // src: 'my_app/src/comments',
-
-    // src: 'my_app/src/global',
-    // exports: {
-    //     global: '$'
-    // },
-
-    view: 'html'
-
-});
+// generate({
+//     src: '../dollar-js',
+// });

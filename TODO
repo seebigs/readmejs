@@ -1,0 +1,45 @@
+======
+
+seebigs-each
+    simplest export of Object literal
+    modules
+        seebigs-each
+
+======
+
+easybars
+    single export of a Class
+    modules
+        Easybars Class
+
+======
+
+dollar-js
+    library of global plugins
+    grouped/categorized api
+    modules
+        animate
+            animate
+            fadeIn
+            fadeOut
+        etc..
+
+======
+
+im-toolkit
+    individual requirable modules
+    complex glob: map all folders that don't start with _
+    modules
+        cookies
+        date
+        errors
+        fetch
+        global
+        load
+        log
+        promise
+        safetynet
+        string
+        type
+        url
+        utils
