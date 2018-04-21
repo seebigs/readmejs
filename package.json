@@ -23,6 +23,7 @@
     "mkdirp": "^0.5.1",
     "parsetree-js": "^0.1.0",
     "seebigs-each": "^1.1.0",
+    "seebigs-resolve": "^1.4.0",
     "seebigs-utils": "^1.1.0"
   },
   "devDependencies": {

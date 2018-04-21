@@ -1,8 +1,6 @@
 var each = require('seebigs-each');
 var files = require('./lib/files');
-var findExportNode = require('./lib/findExportNode');
-var parseNode = require('./lib/parse/node');
-var ParseTree = require('parsetree-js');
+var parseModule = require('./lib/parse/module');
 var settings = require('./lib/settings');
 var utils = require('seebigs-utils');
 
@@ -24,19 +22,10 @@ function generate(options) {
     each(modulePaths, function (modPath) {
         var contents = utils.readFile(modPath);
         if (contents) {
-            var $ = new ParseTree(contents);
-            if ($) {
-                var exportNodeValue = findExportNode($, config);
-                var parsedModule = parseNode(exportNodeValue);
-
-                console.log();
-                console.log(JSON.stringify(parsedModule, null, 4));
-
-                // var parsed = parseModule($, config);
-                // if (parsed) {
-                //     app.modules.push(parsed);
-                // }
-            }
+            var parsedModule = parseModule(contents, modPath, config);
+            console.log();
+            console.log(modPath);
+            console.log(JSON.stringify(parsedModule, null, 4));
         }
     });
 
@@ -56,9 +45,6 @@ module.exports = {
 // generate('../easybars');
 
 generate({
-    // packagePath: '../easybars',
-    // modules: 'test/specs',
-    // modules: ['my_app/**/*.js', 'lib']
     modules: './parseMe.js',
     exports: {
         value: '$.fn.thing.too',
@@ -66,9 +52,18 @@ generate({
 });
 
 // generate({
-//     src: '../im-toolkit',
+//     packagePath: '../im-toolkit',
+//     modules: function (files, cwd) {
+//         return files.filter(function (file) {
+//             var relFile = file.split(cwd + '/')[1];
+//             if (relFile.indexOf('node_modules') === -1) {
+//                 return relFile.charAt(0) !== '_' && relFile.split('/').length > 1;
+//             }
+//         });
+//     },
 // });
 
 // generate({
-//     src: '../dollar-js',
+//     packagePath: '../tags',
+//     modules: '../tags/src/javascripts',
 // });
